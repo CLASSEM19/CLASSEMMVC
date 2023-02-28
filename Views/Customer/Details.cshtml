@@ -1,0 +1,78 @@
+﻿@model CLASSEM_MVC_PRO.Models.DTOs.CustomerDTOs.CustomerResponseModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Records.css">
+    <title> Customer Record Page</title>
+</head>
+
+
+
+<body>
+
+    <header style="background: rgba(0,0,0,.5);padding: 5px;">
+        <div class="logo">
+            <img class="lo" src="log.jpeg" alt="ClassemLogo">
+            <div>
+                <h2>#CLASSEM#</h2>
+            </div>
+        </div>
+    </header>
+    <div class="container-head">
+        <h1>PROFILE</h1>
+    </div>
+    <div class="table">
+        <table style="width:100%">
+            <tr>
+                <th class="th">First Name:</th>
+                <td>@Html.DisplayFor(model => model.Data.FirstName)</td>
+            </tr>
+            <tr>
+                <th class="th">Last Name:</th>
+                <td>@Html.DisplayFor(model => model.Data.LastName)</td>
+            </tr>
+            <tr>
+                <th class="th">Reg No:</th>
+                <td>@Html.DisplayFor(model => model.Data.UserId)</td>
+            </tr>
+            <tr>
+                <th class="th">Email:</th>
+                <td>@Html.DisplayFor(model => model.Data.Email)</td>
+            </tr>
+            <tr>
+                <th class="th">Phone Number:</th><em>
+                    <td>@Html.DisplayFor(model => model.Data.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <th class="th">DOB:</th>
+                <td>@Html.DisplayFor(model => model.Data.DateOfBirth)</td>
+            </tr>
+            <tr>
+                <th class="th">Balance:</th>
+                <td>@Html.DisplayFor(model => model.Data.Balance)</td>
+            </tr>
+            <tr>
+                <th class="th">Gender:</th>
+                <td>@Html.DisplayFor(model => model.Data.Gender)</td>
+            </tr>
+        <div>
+            <a asp-action="Update" asp-route-customerId="@Model.Data.UserId" class="btn btn-success">EDIT</a> |
+            <a asp-action="Index" class="btn btn-warning">Back to List</a>
+        </div>
+        </table>
+
+
+    </div>
+</body>
+
+</html>

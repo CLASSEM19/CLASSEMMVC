@@ -1,0 +1,64 @@
+﻿@model CLASSEM_MVC_PRO.Models.DTOs.CustomerDTOs.UpdateCustomerRequestModel
+
+@{
+    ViewData["Title"] = "Edit";
+    if (TempData["Success"] != null)
+    {
+        <h2>@TempData["success"]</h2>
+    }
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styleCusSign.css">
+    <title>signUp</title>
+</head>
+
+<body>
+    <img class="ooo" class="" src="~/Images/log.jpeg" alt="ClassemLogo">
+    <form asp-action="Edit" asp-controller="Customer" method="post">
+        <div class="form" style="height: 30%;">
+            <div class="title">Welcome</div>
+            <div class="subtitle">UPDATE YOUR PROFILE!</div>
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+                <input asp-for="UserId"type="hidden" />
+                
+            <div class="input-container ic2">
+                <label asp-for="FirstName" class=""></label>
+                <input id="fisrtname" class="input" asp-for="FirstName" class="form-control" name="FirstName" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+
+            <div class="input-container ic2">
+                <label asp-for="LastName" class=""></label>
+                <input id="lastname" class="input" asp-for="LastName" class="form-control" name="LastName" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="input-container ic2">
+                <label asp-for="Address" class=""></label>
+                <input id="address" class="input" asp-for="Address" class="form-control" name="Address" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+
+            <button asp-action="Update" asp-controller="Customer" type="text" class="submit">submit</button>
+            <div>
+                <a style="color: wheat;" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </form>
+    <img class="ooi" class="" src="~/Images/log.jpeg" alt="ClassemLogo">
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

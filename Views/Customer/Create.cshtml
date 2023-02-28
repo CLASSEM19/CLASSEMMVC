@@ -1,0 +1,76 @@
+﻿@model CLASSEM_MVC_PRO.Models.DTOs.CustomerDTOs.CreateCustomerRequestModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styleCusSign.css">
+    <title>signUp</title>
+</head>
+
+<body>
+    <form asp-action="Create" asp-controller="Customer" method="post">
+        <div class="form">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Let's create your account!</div>
+            <div class="input-container ic1">
+                <input id="FirstName" class="input" type="text" placeholder=" " name="FirstName" />
+                <div class="cut"></div>
+                <label for="FirstFame" class="placeholder">First Name</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="lastname" class="input" type="text" placeholder=" " name="LastName" />
+                <div class="cut"></div>
+                <label for="lastname" class="placeholder">Last Name</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="Email" class="input" type="text" placeholder=" " name="Email" />
+                <div class="cut cut-short"></div>
+                <label for="email" class="placeholder">Email</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="PhoneNumber" class="input" type="tel" placeholder=" " name="PhoneNumber" />
+                <div class="cut"></div>
+                <label for="PhoneNumber" class="placeholder">PhoneNumber</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="DateOfBirth" class="input" type="date" placeholder=" " name="DateOfBirth" />
+                <div class="cut"></div>
+                <label for="DateOfBirth" class="placeholder">DateOfBirth</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="Address" class="input" type="text" placeholder=" " name="Address" />
+                <div class="cut"></div>
+                <label for="Address" class="placeholder">Address</label>
+            </div>
+            <div class="input-container ic2">
+                <input id="Gender" class="input" type="text" placeholder=" " name="Gender" />
+                <div class="cut"></div>
+                <label for="Gender" class="placeholder">Gender</label>
+                <select id="budget" name="budget" required class="input-tag-reg-budget">
+                    <option value="budget">Male</option>
+                    <option value="order">Female</option>
+                </select>
+            </div>
+            <div class="input-container ic2">
+                <input id="password" class="input" type="password" placeholder=" " name="Password" />
+                <div class="cut"></div>
+                <label for="password" class="placeholder">PassWord</label>
+            </div>
+            <button asp-action="Create" asp-controller="Customer" type="text" class="submit">submit</button>
+        </div>
+    </form>
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

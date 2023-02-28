@@ -1,0 +1,42 @@
+ @model  CLASSEM_MVC_PRO.Models.DTOs.UserDTOs.LoginRequestModel
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/style.css">
+    <title>LoginForm</title>
+</head>
+<body>
+<div class="container" id="container">
+    <div class="form-container log-in-container">
+        <form asp-action="Login" asp-controller="Home" method="post">
+            <h1>LogIn</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fa fa-facebook fa-2x"></i></a>
+                <a href="#" class="social"><i class="fab fa fa-twitter fa-2x"></i></a>
+            </div>
+            <span>Or Use Your Account</span>
+            <input type="email" asp-for="@Model.Email" placeholder="Email" />
+            <input type="password" asp-for="@Model.Password" placeholder="Password" />
+            <a href="#">Forgot your Password?</a>
+            <button class="but" asp-action="Login" asp-controller="Home"> Log In</button>
+       </form>
+    </div>
+    <div class="overlay-container">
+        <img class="lo" src="~/Images/log.jpeg" alt="ClassemLogo">
+        <h1 class="h">CLASSEM</h1>
+        <h1 class="f"> Form.</h1>
+          <button><a asp-action="Create" asp-controller="Admin">SignUp as Admin...</a></button>  
+        <button><a asp-action="Create" asp-controller="Customer">SignUp As Customer</a></button>
+        <div class="overlay">
+            <div class="overlay-panel">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

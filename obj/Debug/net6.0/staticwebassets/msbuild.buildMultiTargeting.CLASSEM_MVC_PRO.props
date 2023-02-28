@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CLASSEM_MVC_PRO.props" />
+</Project>

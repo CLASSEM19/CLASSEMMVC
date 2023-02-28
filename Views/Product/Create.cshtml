@@ -1,0 +1,59 @@
+﻿@model CLASSEM_MVC_PRO.Models.DTOs.ProductDTOs.
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/createPro.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header style="background: rgba(0,0,0,.5);padding: 5px;">
+        <div class="logo">
+            <img class="lo" src="../Images/log.jpeg" alt="ClassemLogo">
+            <div>
+                <h2>#CLASSEM#</h2>
+            </div>
+        </div>
+    </header>
+    <div class="login-box">
+        <h2>ADD CATEGORY OF PRODUCT</h2>
+        <form asp-action="Create" asp-controller="Product" method="post">
+
+            <div class="user-box">
+                <input type="text" name="Name" required="">
+                <label>Name</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="Description" required="">
+                <label>Description</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="SellingPrice" required="">
+                <label>SellingPrice</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="Color" required="">
+                <label>Color</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="Engine" required="">
+                <label>Engine</label>
+            </div>
+            <button asp-action="Create" asp-controller="Product" type="text">Submit</button>
+        </form>
+        <br>
+    </div>
+</body>
+</html>

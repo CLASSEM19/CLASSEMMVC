@@ -1,0 +1,90 @@
+﻿@model IEnumerable<CLASSEM_MVC_PRO.Models.DTOs.ProductDTOs.ProductResponseModel>
+@{
+    ViewData["Title"] = "Create";
+    if (TempData["success"] != null)
+    {
+        <h2>@TempData["success"]</h2>
+    }
+    if (TempData["failed"] != null)
+    {
+        <h2>@TempData["failed"]</h2>
+    }
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/stylePro.css">
+    <title> Product Record Page</title>
+</head>
+
+
+
+<body>
+        <a style= "color: white" asp-controller= "Admin" asp-action="DashBoard" method= "post"><--</a>
+        <div class="app-content">
+            <div class="app-content-header">
+                <h2 style="color: wheat;">SUPERCAR OUTLET</h2>
+                <h2 class="app-content-headerclass">#CLASSEM#</h2>
+            </div>
+
+            <div class="container-head">
+                <h1>PRODUCT LIST</h1>
+            </div>
+            <div class="table">
+                <table style="width:100%">
+                    <tr>
+                        <th class="th">S/N</th>
+                        <th class="th"> @Html.DisplayNameFor(model => model.Data.ProductId)</th>
+                        <th class="th">@Html.DisplayNameFor(model => model.Data.Name)</th>
+                        <th class="th"> @Html.DisplayNameFor(model => model.Data.Color)</th>
+                        <th class="th">@Html.DisplayNameFor(model => model.Data.SellingPrice)</th>
+                        <th class="th">@Html.DisplayNameFor(model => model.Data.Engine)</th>
+                        <th class="th">@Html.DisplayNameFor(model => model.Data.IsAvailable)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+
+                    @{
+                        int seria = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>@seria</td>
+                            <td>@Html.DisplayFor(modelItem => item.Data.ProductId)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Data.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Data.Color)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Data.SellingPrice)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Data.Engine)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Data.IsAvailable)</td>
+                            <td>
+                                <a asp-action="Update" asp-route-ProductId="@item.Data.ProductId">EDIT</a> |
+                                <a asp-action="Details" asp-route-ProductId="@item.Data.ProductId">DETAILS</a> |
+                            </td>
+                            <td>
+                                <a asp-action="DeletePreview" asp-route-ProductId="@item.Data.ProductId">DELETE</a> |
+                                <a asp-controller="Transaction" asp-action="Create"
+                                asp-route-productId="@item.Data.ProductId">BUY</a>
+                            </td>
+                        </tr>
+                        seria++;
+                    }
+                </table>
+                <a style= "color: white" asp-controller= "Product" asp-action="Create" method= "post">Creat New Product</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CLASSEM_MVC_PRO.Models.DTOs.CustomerDTOs.CustomerResponseModel>
+@{
+    ViewData["Title"] = "Create";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/stylePC.css">
+    <title> Product Record Page</title>
+</head>
+
+<body>
+        <a style= "color: white" asp-controller= "Admin" asp-action="DashBoard" method= "post"><--</a>
+        <div class="app-content">
+            <div class="app-content-header">
+                <h2 style="color: wheat;">SUPERCAR OUTLET</h2>
+                <h2 class="app-content-headerclass">#CLASSEM#</h2>
+            </div>
+
+            <div>
+                <div class="container-head">
+                    <h1>CUSTOMER LIST</h1>
+                </div>
+                <div class="tabl">
+                    <table >
+                        <tr>
+                            <th class="th">S/N</th>
+                            <th class="th"> @Html.DisplayNameFor(model => model.Data.FirstName)</th>
+                            <th class="th">@Html.DisplayNameFor(model => model.Data.LastName)</th>
+                            <th class="th">@Html.DisplayNameFor(model => model.Data.UserId)</th>
+                            <th class="th">@Html.DisplayNameFor(model => model.Data.Email)</th>
+                            <th class="th">@Html.DisplayNameFor(model => model.Data.PhoneNumber)</th>
+                            <th class="th"></th>
+                        </tr>
+
+                        @{
+                            int seria = 1;
+                        }
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@seria</td>
+                                <td>@Html.DisplayFor(modelItem => item.Data.FirstName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Data.LastName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Data.UserId)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Data.Email)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Data.PhoneNumber)</td>
+                                <td>
+                                    <a asp-action="Update" asp-route-customerId="@item.Data.UserId">EDIT</a> ||
+                                    <a asp-action="Details" asp-route-existByEmail="@item.Data.Email">DETAILS</a>
+                                </td>
+                                <td>
+                                    <a asp-action="AddMoney" asp-route-customerId="@item.Data.UserId">ADD MONEY</a>
+                                </td>
+                            </tr>
+                            seria++;
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

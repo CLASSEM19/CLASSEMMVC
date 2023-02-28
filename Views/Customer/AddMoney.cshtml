@@ -1,0 +1,52 @@
+﻿@model CLASSEM_MVC_PRO.Models.DTOs.CustomerDTOs.UpdateCustomerRequestModel
+
+@{
+    ViewData["Title"] = "Edit";
+    if (TempData["Success"] != null)
+    {
+        <h2>@TempData["success"]</h2>
+    }
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styleCusSign.css">
+    <title>signUp</title>
+</head>
+
+<body>
+    <img class="ooo" class="" src="~/Images/log.jpeg" alt="ClassemLogo">
+    <form asp-action="Edit" asp-controller="Customer" method="post">
+        <div class="form" style="height: 30%;">
+            <div class="title">Welcome</div>
+            <div class="subtitle">ADD MONEY TO WALLET!</div>
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+                <input asp-for="UserId"type="hidden" />
+                
+            <div class="input-container ic2" style="color: white;">
+                <label asp-for="Balance" class=""></label>
+                <input id="Balance" class="input" asp-for="Balance" class="form-control" name="Balance" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <button asp-action="AddMoney" asp-controller="Customer" type="text" class="submit">ADD</button>
+            <div>
+                <a style="color: wheat;" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+    </form>
+    <img class="ooi" class="" src="~/Images/log.jpeg" alt="ClassemLogo">
+</body>
+</html>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -8,7 +8,15 @@ namespace CLASSEM_MVC_PRO.Models.Entities
 {
     public class Transaction
     {
+        public string CustomerId { get; set; }
+        public Customer Customer { get; set; }
+        public int Quantity { get; set; }
+        public string ProductId { get; set; }
         [Key]
-        public string TransactionId{get;set;}
+        public string ReferenceNo { get; set; }
+        public double AmountPaid { get; set; }
+        public double SellingPrice { get; set; }
+        public double TotalAmount { get; set; }
+        public DateTime Created { get; set; }
     }
 }

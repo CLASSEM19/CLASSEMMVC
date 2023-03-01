@@ -4,61 +4,67 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = null;
 }
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>DELETE</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Records.css">
+    <title> Customer Record Page</title>
+</head>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>PRODUCT</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.ProductId)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.ProductId)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.Name)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.Name)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.Description)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.Color)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.Color)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.SellingPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.SellingPrice)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.Engine)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.Engine)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Data.SellingPrice)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Data.SellingPrice)
-        </dd>
-    </dl>
-</div>
+<body>
 
-<div>
-    <a asp-action="Delete" asp-route-ProductId="@Model.Data.ProductId" class="btn btn-danger">DELETE</a>
-    <a asp-action="Index" class="btn btn-warning">Back to List</a>
-</div>
+    <header style="background: rgba(0,0,0,.5);padding: 5px;">
+        <div class="logo">
+            <img class="lo" src="log.jpeg" alt="ClassemLogo">
+            <div>
+                <h2>#CLASSEM#</h2>
+            </div>
+        </div>
+    </header>
+    <div class="container-head">
+        <h1>PRODUCT</h1>
+    </div>
+        <h3 style="color: #03e9f4;">Are you sure you want to delete this?</h3>
+    <div class="table">
+        <table style="width:100%">
+            <tr>
+                <th class="th">Name:</th>
+                <td>@Html.DisplayFor(model => model.Data.Name)</td>
+            </tr>
+            <tr>
+                <th class="th">Reg No:</th>
+                <td>@Html.DisplayFor(model => model.Data.ProductId)</td>
+            </tr>
+            <tr>
+                <th class="th">Email:</th>
+                <td>@Html.DisplayFor(model => model.Data.Description)</td>
+            </tr>
+            <tr>
+                <th class="th">Phone Number:</th><em>
+                    <td>@Html.DisplayFor(model => model.Data.Color)</td>
+            </tr>
+            <tr>
+                <th class="th">DOB:</th>
+                <td>@Html.DisplayFor(model => model.Data.Engine)</td>
+            </tr>
+            <tr>
+                <th class="th">Balance:</th>
+                <td>@Html.DisplayFor(model => model.Data.SellingPrice)</td>
+            </tr>
+            <div>
+                <a asp-action="Delete" asp-route-ProductId="@Model.Data.ProductId" class="btn btn-danger">DELETE</a>
+                <a asp-action="Index" class="btn btn-warning">Back to List</a>
+            </div>
+        </table>
+
+
+    </div>
+</body>
+
+</html>

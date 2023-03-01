@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CLASSEM_MVC_PRO.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20230227174859_mymigratee")]
+    [Migration("20230228190816_mymigratee")]
     partial class mymigratee
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,6 +127,47 @@ namespace CLASSEM_MVC_PRO.Migrations
                         .IsUnique();
 
                     b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("CLASSEM_MVC_PRO.Models.Entities.Product", b =>
+                {
+                    b.Property<string>("ProductId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Engine")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("Modified")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("SellingPrice")
+                        .HasColumnType("double");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("CLASSEM_MVC_PRO.Models.Entities.Transaction", b =>

@@ -1,4 +1,4 @@
-namespace CLASSEM_MVC_PRO.Models.DTOs.AdminDTOs
+namespace CLASSEM_MVC_PRO.Models.DTOs.ProductDTOs
 {
     public class CreateProductRequestModel
     {

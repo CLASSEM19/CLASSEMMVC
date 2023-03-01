@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\Records.css"
     },
     {
+      "Id": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\createPro.css",
+      "PackagePath": "staticwebassets\\css\\createPro.css"
+    },
+    {
       "Id": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -35,6 +39,10 @@
     {
       "Id": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\stylePC.css",
       "PackagePath": "staticwebassets\\css\\stylePC.css"
+    },
+    {
+      "Id": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\stylePro.css",
+      "PackagePath": "staticwebassets\\css\\stylePro.css"
     },
     {
       "Id": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\favicon.ico",

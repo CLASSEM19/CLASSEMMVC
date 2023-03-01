@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = null;
 }
 @{
     if (TempData["success"] != null)
@@ -14,53 +15,65 @@
     }
 }
 
-<h1> ADD PRODUCT</h1>
-<hr />
-    
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="col-md-4">
-    @using (Html.BeginForm("Edit", "Product"))
-    {
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styleCusSign.css">
+    <title>signUp</title>
+</head>
 
-        <div class="form-group">
-            @Html.HiddenFor(x => x.ProductId, new {@class = "form-control"})
+<body>
+    <img class="ooo" class="" src="~/Images/log.jpeg" alt="ClassemLogo">
+    <form asp-action="Update" asp-controller="Product" method="post">
+        <div class="form" style="height: 30%;">
+            <div class="title">Welcome</div>
+            <div class="subtitle">UPDATE PRODUCT!</div>
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+            </div>
+                <input asp-for="ProductId"type="hidden" />
+                
+            <div class="input-container ic2">
+                <label asp-for="Name" class=""></label>
+                <input id="name" class="input" asp-for="Name" class="form-control" name="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="input-container ic2">
+                <label asp-for="Description" class=""></label>
+                <input id="description" class="input" asp-for="Description" class="form-control" name="Description" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="input-container ic2">
+                <label asp-for="SellingPrice" class=""></label>
+                <input id="sellingPrice" class="input" asp-for="SellingPrice" class="form-control" name="SellingPrice" />
+                <span asp-validation-for="SellingPrice" class="text-danger"></span>
+            </div>
+            <div class="input-container ic2">
+                <label asp-for="Color" class=""></label>
+                <input id="color" class="input" asp-for="Color" class="form-control" name="Color" />
+                <span asp-validation-for="Color" class="text-danger"></span>
+            </div>
+            <div class="input-container ic2">
+                <label asp-for="Engine" class=""></label>
+                <input id="engine" class="input" asp-for="Engine" class="form-control" name="Engine" />
+                <span asp-validation-for="Engine" class="text-danger"></span>
+            </div>
+
+            <button asp-action="Update" asp-controller="Product" type="text" class="submit">submit</button>
+            <div>
+                <a style="color: wheat;" asp-action="Index">Back to List</a>
+            </div>
         </div>
+    </form>
+    <img class="ooi" class="" src="~/Images/log.jpeg" alt="ClassemLogo">
+</body>
 
-        <div class="form-group">
-            @Html.LabelFor(x => x.Name, new {@class = "control-label"})
-            @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
-            @Html.ValidationMessageFor(x => x.Name,"", new {@class="text-danger"})
-        </div>
+</html>
 
-        <div class="form-group">
-            @Html.LabelFor(x => x.Description, new {@class = "control-label"})
-            @Html.TextBoxFor(x => x.Description, new {@class = "form-control"})
-            @Html.ValidationMessageFor(x => x.Description,"", new {@class="text-danger"})
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(x => x.SellingPrice, new {@class = "control-label"})
-            @Html.TextBoxFor(x => x.SellingPrice, new {@class = "form-control"})
-            @Html.ValidationMessageFor(x => x.SellingPrice,"", new {@class="text-danger"})
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(x => x.Color, new {@class = "control-label"})
-            @Html.TextBoxFor(x => x.Color, new {@class = "form-control"})
-            @Html.ValidationMessageFor(x => x.Color,"", new {@class="text-danger"})
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(x => x.Engine, new {@class = "control-label"})
-            @Html.TextBoxFor(x => x.Engine, new {@class = "form-control"})
-            @Html.ValidationMessageFor(x => x.Engine,"", new {@class="text-danger"})
-        </div>
-
-        <div class="form-group">
-            <button type="submit" class="btn btn-success">ADD</button>
-        </div>
-    }
-</div>
 @section scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

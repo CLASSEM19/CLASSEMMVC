@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "3Y/P44n5VzhRQdxi57Z/MZRnC7YKKPzyJ7xinpgJO9A=",
+  "Hash": "l0iRraQ8poS+TFWLorOzVPG1hR3GzJs8qK2msa8vH+E=",
   "Source": "CLASSEM_MVC_PRO",
   "BasePath": "_content/CLASSEM_MVC_PRO",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CLASSEM_MVC_PRO.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\createPro.css",
+      "SourceId": "CLASSEM_MVC_PRO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\",
+      "BasePath": "_content/CLASSEM_MVC_PRO",
+      "RelativePath": "css/createPro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\createPro.css"
     },
     {
       "Identity": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\Records.css",
@@ -151,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\stylePC.css"
+    },
+    {
+      "Identity": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\css\\stylePro.css",
+      "SourceId": "CLASSEM_MVC_PRO",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\",
+      "BasePath": "_content/CLASSEM_MVC_PRO",
+      "RelativePath": "css/stylePro.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\stylePro.css"
     },
     {
       "Identity": "C:\\Users\\ogund\\Desktop\\CLASSEM_MVC_PRO\\wwwroot\\favicon.ico",
